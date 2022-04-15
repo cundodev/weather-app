@@ -1,21 +1,17 @@
-import { useState, useEffect } from 'react'
-import getLocations from '../../Services/getLocations'
+import { useState } from 'react'
 import SearchForm from '../../Components/SearchForm'
 import ListOfLocations from '../../Components/ListoOfLocations'
 import { SearchCard, Button, ButtonContainer } from './style.js'
+import useLocations from '../../Hooks/useLocations'
+import useSingleLocation from '../../Hooks/useSingleLocation'
 
 export default function Home () {
-  const [locations, setLocations] = useState([])
-  const [keyword, setKeyword] = useState('')
+  const [keyword, setKeyword] = useState(false)
+  const [locationID, setLocationID] = useState(false)
 
-  useEffect(() => {
-    if (keyword === '') return
-    getLocations({ keyword: keyword })
-      .then(locations => {
-        setLocations(locations)
-      })
-  }, [keyword])
-
+  const { locations } = useLocations({ keyword })
+  const { location } = useSingleLocation({ locationID })
+  console.log(location)
   return (
     <SearchCard>
       <ButtonContainer>
@@ -24,7 +20,7 @@ export default function Home () {
         </Button>
       </ButtonContainer>
       <SearchForm setKeyword={setKeyword} />
-      <ListOfLocations locations={locations} />
+      <ListOfLocations locations={locations} setLocationID={setLocationID} />
     </SearchCard>
   )
 };
