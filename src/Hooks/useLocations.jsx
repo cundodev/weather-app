@@ -10,7 +10,7 @@ export default function useLocations ({ keyword }) {
       .then(locations => {
         setLocations(locations)
       })
-  }, [keyword])
+  }, [keyword, setLocations])
 
   return { locations }
 };

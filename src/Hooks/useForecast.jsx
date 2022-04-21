@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import getSingleLocation from '../Services/getSingleLocation'
 
-export default function useSingleLocation ({ locationID }) {
-  const [location, setLocation] = useState([])
+export default function useForecast ({ locationID }) {
+  const [location, setLocation] = useState(null)
 
   useEffect(() => {
     if (!locationID) return

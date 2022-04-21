@@ -1,26 +1,29 @@
-import { useState } from 'react'
-import SearchForm from '../../Components/SearchForm'
-import ListOfLocations from '../../Components/ListoOfLocations'
-import { SearchCard, Button, ButtonContainer } from './style.js'
-import useLocations from '../../Hooks/useLocations'
-import useSingleLocation from '../../Hooks/useSingleLocation'
+import { useContext } from 'react'
+import SearchCard from '../../Components/SearchCard'
+import TodayHighlight from '../../Components/Highlight'
+import useForecast from '../../Hooks/useForecast'
+import LocationContext from '../../Context/locationContext'
+import { } from './style.js'
+import Today from '../../Components/Today'
 
 export default function Home () {
-  const [keyword, setKeyword] = useState(false)
-  const [locationID, setLocationID] = useState(false)
+  const { locationID } = useContext(LocationContext)
 
-  const { locations } = useLocations({ keyword })
-  const { location } = useSingleLocation({ locationID })
-  console.log(location)
+  const { location } = useForecast({ locationID })
+
   return (
-    <SearchCard>
-      <ButtonContainer>
-        <Button>
-          X
-        </Button>
-      </ButtonContainer>
-      <SearchForm setKeyword={setKeyword} />
-      <ListOfLocations locations={locations} setLocationID={setLocationID} />
-    </SearchCard>
+    <div className='App-content'>
+      {
+        !location
+          ? <SearchCard />
+          : (
+            <>
+              <Today today={location.consolidated_weather[0]} />
+              <TodayHighlight infoToday={location.consolidated_weather[0]} />
+            </>
+            )
+      }
+
+    </div>
   )
 };

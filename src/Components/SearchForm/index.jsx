@@ -20,7 +20,7 @@ export default function SearchForm ({ setKeyword }) {
           className='Search'
           onChange={handleChange}
           value={search}
-          placeholder='Buscar Localidad'
+          placeholder='Search location'
         />
       </form>
     </FormSearch>

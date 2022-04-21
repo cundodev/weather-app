@@ -1,5 +1,8 @@
+import { useContext } from 'react'
+import LocationContext from '../../Context/locationContext'
 import { LocationList, LocationListItem } from './style'
-export default function ListOfLocations ({ locations, setLocationID }) {
+export default function Locations ({ locations }) {
+  const { setLocationID } = useContext(LocationContext)
   const handleOnClick = (woeid) => {
     setLocationID(woeid)
   }
