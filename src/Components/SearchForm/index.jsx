@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
+import { useContext } from 'react'
+import LocationContext from '../../Context/locationContext'
 import { Imput, FormSearch } from './style'
-
-export default function SearchForm ({ setKeyword }) {
-  const [search, setSearch] = useState('')
+export default function SearchForm () {
+  const { keyword, setKeyword } = useContext(LocationContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setKeyword(search)
   }
 
   const handleChange = (e) => {
-    setSearch(e.target.value)
+    setKeyword(e.target.value)
   }
   return (
-    <FormSearch>
-      <form onSubmit={handleSubmit}>
-        <Imput
-          type='text'
-          className='Search'
-          onChange={handleChange}
-          value={search}
-          placeholder='Search location'
-        />
-      </form>
+
+    <FormSearch onSubmit={handleSubmit}>
+      <Imput
+        type='text'
+        className='Search'
+        onChange={handleChange}
+        value={keyword}
+        placeholder='Search location'
+      />
     </FormSearch>
+
   )
 };

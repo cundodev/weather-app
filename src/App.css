@@ -1,24 +1,16 @@
 .App {
-  background-color: #282c34;
+  background: rgb(98,184,246);
+  background: linear-gradient(180deg, rgba(98,184,246,1) 0%, rgba(44,121,193,1) 75%);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+ 
 }
 
-.App-content {
-  background-color: #0f0d1c;
-  border-radius: 10px;
-  width: 1000px;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
+main{
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
-}

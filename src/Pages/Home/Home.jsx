@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import SearchCard from '../../Components/SearchCard'
-import TodayHighlight from '../../Components/Highlight'
-import useForecast from '../../Hooks/useForecast'
 import LocationContext from '../../Context/locationContext'
-import { } from './style.js'
+import useForecast from '../../Hooks/useForecast'
+import NavBar from '../../Components/NavBar'
 import Today from '../../Components/Today'
+import Location from '../../Components/Location'
+import { } from './style.js'
 
 export default function Home () {
   const { locationID } = useContext(LocationContext)
@@ -12,18 +12,16 @@ export default function Home () {
   const { location } = useForecast({ locationID })
 
   return (
-    <div className='App-content'>
+    <main>
+      <NavBar />
       {
-        !location
-          ? <SearchCard />
-          : (
-            <>
-              <Today today={location.consolidated_weather[0]} />
-              <TodayHighlight infoToday={location.consolidated_weather[0]} />
-            </>
-            )
+        location && (
+          <>
+            <Location location={location} />
+            <Today today={location.consolidated_weather[0]} />
+          </>
+        )
       }
-
-    </div>
+    </main>
   )
 };

@@ -6,17 +6,20 @@ export default function Locations ({ locations }) {
   const handleOnClick = (woeid) => {
     setLocationID(woeid)
   }
+
   return (
+
     <LocationList>
       {
-        locations.map(({ title, woeid }) => {
-          return (
-            <LocationListItem key={woeid} onClick={() => handleOnClick(woeid)}>
-              <a>{title}</a>
-            </LocationListItem>
-          )
-        })
-      }
+          locations.map(({ title, woeid }) => {
+            return (
+              <LocationListItem key={woeid} onClick={() => handleOnClick(woeid)}>
+                <a>{title}</a>
+              </LocationListItem>
+            )
+          })
+        }
     </LocationList>
+
   )
 };
