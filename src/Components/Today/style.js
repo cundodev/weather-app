@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const TodayInfo = styled.div`
+const TodayInfo = styled.section`
   width: 100%;
   height: 10em;
   background-color: rgba(255,255,255,0.1);
@@ -10,11 +10,11 @@ const TodayInfo = styled.div`
   
 `
 const Img = styled.img`
-  width: 7em;
+  width: 5em;
 `
 const Icon = styled.div`
-  flex-grow: 1.25;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 `
 const Content = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ const Temperature = styled.span`
   font-weight: 300;
 `
 const State = styled.span`
-  font-size: 1.1em;
+  font-size: .75em;
   opacity: .7;
 `
 

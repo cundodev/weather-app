@@ -36,7 +36,7 @@ export default function TodayDescription ({ infoToday }) {
             Humidity
           </Title>
           <Stat>
-            {Math.round(infoToday.humidity)}<span>mph</span>
+            {Math.round(infoToday.humidity)} %
           </Stat>
         </div>
       </InfoItem>
@@ -46,7 +46,7 @@ export default function TodayDescription ({ infoToday }) {
             Visibility
           </Title>
           <Stat>
-            {Math.round(infoToday.visibility)}<span>mph</span>
+            {Math.round(infoToday.visibility)}
           </Stat>
         </div>
         <div>
@@ -54,7 +54,7 @@ export default function TodayDescription ({ infoToday }) {
             Air Pressure
           </Title>
           <Stat>
-            {Math.round(infoToday.air_pressure)}<span>mph</span>
+            {Math.round(infoToday.air_pressure)}
           </Stat>
         </div>
       </InfoItem>

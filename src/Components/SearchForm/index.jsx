@@ -11,17 +11,16 @@ export default function SearchForm () {
   const handleChange = (e) => {
     setKeyword(e.target.value)
   }
-  return (
 
+  return (
     <FormSearch onSubmit={handleSubmit}>
       <Imput
         type='text'
         className='Search'
         onChange={handleChange}
-        value={keyword}
+        value={keyword || ''}
         placeholder='Search location'
       />
     </FormSearch>
-
   )
 };

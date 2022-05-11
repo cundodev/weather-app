@@ -1,35 +1,44 @@
-
-export default function NextDays (params) {
+import moment from 'moment'
+import { IMG_URL } from '../../Services/settings'
+import { Next5Days, Title, Days, Row, Day, Date, Icon, Img, Item, Name } from './styles'
+export default function NextDays ({ nextDays }) {
   return (
-    <div className='next-days'>
-      <h2>Next Days</h2>
-      <div className='next-days-conteiner'>
-        <div className='day'>
-          <div className='date'>
-            tue
-            <div className='label'>15/5</div>
-          </div>
-          <div className='icon'>
-            <img src='#' alt='#' />
-          </div>
-          <div className='low'>
-            11
-            <div className='label'>Low</div>
-          </div>
-          <div className='high'>
-            11
-            <div className='label'>High</div>
-          </div>
-          <div className='rain'>
-            11
-            <div className='label'>rain</div>
-          </div>
-          <div className='wind'>
-            11
-            <div className='label'>wind</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Next5Days>
+      <Title>Next Days</Title>
+      <Days>
+        {
+        nextDays.map(day => {
+          return (
+            <Row key={day.id}>
+              <Day>
+                {moment(day.applicable_date).format('dddd')}
+                <Date>{moment(day.applicable_date).format('DD/MM')}</Date>
+              </Day>
+              <Icon>
+                <Img src={`${IMG_URL}${day.weather_state_abbr}.svg`} />
+              </Icon>
+              <Item>
+                {Math.round(day.min_temp)}°
+                <Name>Low</Name>
+              </Item>
+              <Item>
+                {Math.round(day.max_temp)}°
+                <Name>High</Name>
+              </Item>
+              <Item>
+                {Math.round(day.humidity)} %
+                <Name>Humidity</Name>
+              </Item>
+              <Item>
+                <div>{Math.round(day.wind_speed)} <span>mph</span></div>
+                <Name>Wind</Name>
+              </Item>
+            </Row>
+          )
+        })
+      }
+
+      </Days>
+    </Next5Days>
   )
 };

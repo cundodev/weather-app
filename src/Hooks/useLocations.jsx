@@ -5,7 +5,7 @@ export default function useLocations ({ keyword } = { keyword: null }) {
   const [locations, setLocations] = useState(null)
 
   useEffect(() => {
-    if (!keyword || keyword.length === 0) {
+    if (!keyword || keyword === '') {
       setLocations(false)
       return
     }

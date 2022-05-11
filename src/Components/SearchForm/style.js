@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const FormSearch = styled.form`
   width: 100%;
+
 `
 
 const Imput = styled.input`
@@ -18,6 +19,7 @@ const Imput = styled.input`
     outline: inherit;
     border-color: #fff;
   }
+ 
 `
 
 export {

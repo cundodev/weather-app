@@ -3,7 +3,7 @@ import { useState, createContext } from 'react'
 const Context = createContext({})
 
 export function LocationContextProvider ({ children }) {
-  const [locationID, setLocationID] = useState('')
+  const [locationID, setLocationID] = useState(44418)
   const [keyword, setKeyword] = useState('')
 
   return (

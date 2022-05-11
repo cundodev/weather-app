@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import LocationContext from '../../Context/locationContext'
 import SearchForm from '../../Components/SearchForm'
 import Locations from '../../Components/Locations'
-import { Header, Results } from './style.js'
+import { Header, Results, Wrapper, Logo } from './style.js'
 import useLocations from '../../Hooks/useLocations'
 
 export default function NavBar () {
@@ -12,9 +12,9 @@ export default function NavBar () {
 
   return (
     <Header>
-      <div>
-        <span>Weather App</span>
-      </div>
+      <Wrapper>
+        <Logo>Weather App</Logo>
+      </Wrapper>
       <Results>
         <SearchForm />
         {
