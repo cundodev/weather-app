@@ -2,61 +2,37 @@
 import { Info, InfoItem, Title, Stat } from './style'
 
 export default function TodayDescription ({ infoToday }) {
+  const { windSpeed, visibility, precipitation, humidity, max, min, forecast } = infoToday
+
   return (
     <Info>
       <InfoItem>
-        <div>
-          <Title>
-            High
-          </Title>
-          <Stat>
-            {Math.round(infoToday.max_temp)}°
-          </Stat>
-        </div>
-        <div>
-          <Title>
-            Low
-          </Title>
-          <Stat>
-            {Math.round(infoToday.min_temp)}°
-          </Stat>
-        </div>
+        <Stat>
+          {Math.round(min)}°
+          <Title>Min</Title>
+        </Stat>
+        <Stat>
+          {Math.round(visibility)}km
+          <Title>Visibilidad</Title>
+        </Stat>
+        <Stat>
+          {Math.round(precipitation)}mm
+          <Title>Precipitacion</Title>
+        </Stat>
       </InfoItem>
       <InfoItem>
-        <div>
-          <Title>
-            Wind
-          </Title>
-          <Stat>
-            {Math.round(infoToday.wind_speed)}<span>mph</span>
-          </Stat>
-        </div>
-        <div>
-          <Title>
-            Humidity
-          </Title>
-          <Stat>
-            {Math.round(infoToday.humidity)} %
-          </Stat>
-        </div>
-      </InfoItem>
-      <InfoItem>
-        <div>
-          <Title>
-            Visibility
-          </Title>
-          <Stat>
-            {Math.round(infoToday.visibility)}
-          </Stat>
-        </div>
-        <div>
-          <Title>
-            Air Pressure
-          </Title>
-          <Stat>
-            {Math.round(infoToday.air_pressure)}
-          </Stat>
-        </div>
+        <Stat>
+          {Math.round(max)}°
+          <Title>Max</Title>
+        </Stat>
+        <Stat>
+          {Math.round(windSpeed)}<span>km/h</span>
+          <Title>Viento</Title>
+        </Stat>
+        <Stat>
+          {Math.round(humidity)} %
+          <Title>Humedad</Title>
+        </Stat>
       </InfoItem>
     </Info>
   )

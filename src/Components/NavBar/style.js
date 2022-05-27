@@ -2,13 +2,12 @@ import styled from 'styled-components'
 
 const Header = styled.header`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 1em;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem 0;
 `
 const Results = styled.div`
   position: relative;
-  width: 25%;
 `
 const Wrapper = styled.div`
 

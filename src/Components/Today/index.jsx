@@ -1,21 +1,25 @@
-import { IMG_URL } from '../../Services/settings'
+
 import TodayDescription from '../TodayDescription'
-import { TodayInfo, Img, Icon, Content, Temperature, State } from './style'
+import { TodayInfo, Img, Icon, Content, Temperature, State, Wrapper } from './style'
+import { IMG_128X128, findIcon } from '../../assets/script'
 
 export default function Today ({ today }) {
+  const { icon } = findIcon(today.codeIcon)
   return (
     <TodayInfo>
-      <Icon>
-        <Img src={`${IMG_URL}${today.weather_state_abbr}.svg`} />
-      </Icon>
-      <Content>
+      <Wrapper>
         <Temperature>
-          {Math.round(today.the_temp)}°
+          {Math.round(today.temperature)}°
         </Temperature>
-        <State>
-          {today.weather_state_name}
-        </State>
-      </Content>
+        <Content>
+          <Icon>
+            <Img src={`${IMG_128X128}${icon}.png`} />
+          </Icon>
+          <State>
+            {today.conditionText}
+          </State>
+        </Content>
+      </Wrapper>
       <TodayDescription infoToday={today} />
     </TodayInfo>
   )

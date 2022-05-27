@@ -1,15 +1,18 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import LocationContext from '../../Context/locationContext'
-import { Imput, FormSearch } from './style'
+import { Imput, FormSearch, Button, Icon } from './style'
+
 export default function SearchForm () {
-  const { keyword, setKeyword } = useContext(LocationContext)
+  const { setKeyword } = useContext(LocationContext)
+  const [location, setLocation] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setKeyword(location)
   }
 
   const handleChange = (e) => {
-    setKeyword(e.target.value)
+    setLocation(e.target.value)
   }
 
   return (
@@ -18,9 +21,12 @@ export default function SearchForm () {
         type='text'
         className='Search'
         onChange={handleChange}
-        value={keyword || ''}
+        value={location || ''}
         placeholder='Search location'
       />
+      <Button>
+        <Icon src='/src/assets/search-icon.svg' alt='buscar' />
+      </Button>
     </FormSearch>
   )
 };

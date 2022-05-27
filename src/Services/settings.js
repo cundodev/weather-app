@@ -1,3 +1,9 @@
-export const API_URL = 'http://www.metaweather.com/api/location/'
-export const IMG_URL = 'http://www.metaweather.com/static/img/weather/'
-export const CORS_URL = 'https://api.allorigins.win/raw?url='
+export const API_URL = 'https://weatherapi-com.p.rapidapi.com/forecast.json'
+
+export const FETCH_OPTIONS = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
+    'X-RapidAPI-Key': import.meta.env.VITE_APP_API_KEY
+  }
+}

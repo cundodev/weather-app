@@ -1,18 +1,15 @@
-import { useState, useEffect, useContext } from 'react'
-import LocationContext from '../Context/locationContext'
-import getSingleLocation from '../Services/getSingleLocation'
+import { useState, useEffect } from 'react'
+import getTodayForecast from '../Helpers/getTodayForecast'
+import getForecast from '../Services/getForecast'
 
-export default function useForecast ({ locationID }) {
-  const [location, setLocation] = useState(null)
-  const { setKeyword } = useContext(LocationContext)
-  useEffect(() => {
-    if (!locationID) return
-    getSingleLocation({ id: locationID })
-      .then(location => {
-        setLocation(location)
-        setKeyword('')
-      })
-  }, [locationID])
+export default function useForecast ({ keyword }) {
+  const [forecast, setForecast] = useState(null)
 
-  return { location }
+  useEffect(async () => {
+    const { data } = await getForecast({ keyword: keyword })
+    const today = getTodayForecast({ data })
+    setForecast({ today })
+  }, [keyword])
+
+  return { forecast }
 };

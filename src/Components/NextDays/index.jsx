@@ -1,5 +1,4 @@
 import moment from 'moment'
-import { IMG_URL } from '../../Services/settings'
 import { Next5Days, Title, Days, Row, Day, Date, Icon, Img, Item, Name } from './styles'
 export default function NextDays ({ nextDays }) {
   return (
@@ -15,7 +14,7 @@ export default function NextDays ({ nextDays }) {
                 <Date>{moment(day.applicable_date).format('DD/MM')}</Date>
               </Day>
               <Icon>
-                <Img src={`${IMG_URL}${day.weather_state_abbr}.svg`} />
+                <Img src='#' />
               </Icon>
               <Item>
                 {Math.round(day.min_temp)}°
