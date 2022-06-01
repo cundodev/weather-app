@@ -1,3 +1,4 @@
+import { IMG_128X128, findIcon } from '../Constants'
 const getTodayForecast = ({ data }) => {
   const { location, current, forecast } = data
   const { name, region, country } = location
@@ -5,6 +6,8 @@ const getTodayForecast = ({ data }) => {
   const { text, code } = condition
   const { forecastday } = forecast
   const { maxtemp_c, mintemp_c } = forecastday[0].day
+  const { icon } = findIcon(code)
+  const img = `${IMG_128X128}${icon}.png`
 
   return {
     locationName: name,
@@ -16,7 +19,7 @@ const getTodayForecast = ({ data }) => {
     humidity,
     precipitation: precip_mm,
     conditionText: text,
-    codeIcon: code,
+    img,
     forecast: forecastday,
     max: maxtemp_c,
     min: mintemp_c

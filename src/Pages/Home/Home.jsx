@@ -3,7 +3,9 @@ import LocationContext from '../../Context/locationContext'
 import useForecast from '../../Hooks/useForecast'
 import NavBar from '../../Components/NavBar'
 import Today from '../../Components/Today'
+import Location from '../../Components/Location'
 import { } from './style.js'
+import NextDays from '../../Components/NextDays'
 
 export default function Home () {
   const { keyword } = useContext(LocationContext)
@@ -16,19 +18,26 @@ export default function Home () {
   }
 */
   console.log(forecast)
+  console.log(forecast?.nextDays)
   return (
     <main>
       <NavBar />
-      {
+      <>
+        {
        forecast && (
-       //    <>
-       //  <Location location={location} />
-         <Today today={forecast.today} />
-       //    </>
+         <>
+           <Location location={forecast.location} />
+           <Today today={forecast.today} />
+           {
+              forecast.nextDays && (
+                <NextDays nextDays={forecast?.nextDays} />
+              )
+            }
+         </>
        )
-
-        // <NextDays nextDays={location.consolidated_weather.slice(1, location.consolidated_weather.length)} />
       }
+
+      </>
     </main>
   )
 };

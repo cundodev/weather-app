@@ -1,3 +1,26 @@
+const months = {
+  January: 'Enero',
+  February: 'Febrero',
+  March: 'Marzo',
+  April: 'Abril',
+  May: 'Mayo',
+  June: 'Junio',
+  July: 'Julio',
+  August: 'Agosto',
+  September: 'Septiembre',
+  October: 'Octubre',
+  November: 'Noviembre',
+  December: 'Diciembre'
+}
+const days = {
+  Monday: 'Lunes',
+  Tuesday: 'Martes',
+  Wednesday: 'Miercoles',
+  Thursdat: 'Jueves',
+  Friday: 'Viernes',
+  Saturday: 'Sabado',
+  Sunday: 'Domingo'
+}
 export const icons = [
   {
     code: 1000,
@@ -288,7 +311,14 @@ export const icons = [
     icon: 395
   }
 ]
+const findIcon = (code) => icons.find(icon => icon.code === code)
+const IMG_64X64 = '//cdn.weatherapi.com/weather/64x64/day/'
+const IMG_128X128 = '//cdn.weatherapi.com/weather/128X128/day/'
 
-export const findIcon = (code) => icons.find(icon => icon.code === code)
-export const IMG_64X64 = '//cdn.weatherapi.com/weather/64x64/day/'
-export const IMG_128X128 = '//cdn.weatherapi.com/weather/128X128/day/'
+export {
+  days,
+  months,
+  IMG_64X64,
+  IMG_128X128,
+  findIcon
+}

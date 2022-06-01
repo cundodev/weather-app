@@ -16,8 +16,7 @@ const Img = styled.img`
   object-fit: cover;
 `
 const Icon = styled.div`
-  width: 128px;
-  height: 128px;
+  width: auto;
 `
 const Content = styled.div`
   text-align: center;

@@ -4,12 +4,14 @@ const Info = styled.div`
   width: 100%;
   padding: 1rem;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
   border-top: 1px solid rgba(255,255,255,0.5);
   @media (min-width: 768px) {
     border-top: none;
     border-left:1px solid rgba(255,255,255,0.5);
+    flex-direction: row;
+    justify-content: space-around;
   }
 `
 const Title = styled.span`
@@ -22,10 +24,12 @@ const Stat = styled.div`
   font-weight: 600;
 `
 const InfoItem = styled.div`
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  gap:1rem;
+  justify-content: space-around;
+  text-align: center;
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
 `
 export {
   Info,

@@ -21,16 +21,10 @@ const Row = styled.div`
   align-items: center;
   background-color: rgba(255,255,255,0.1);
   border-radius: 10px;
-  padding: 1em;
+  padding: 1rem 2rem;
 `
-const Day = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const Day = styled.span`
   width: 4em;
-`
-const Date = styled.span`
   opacity: 0.7;
 `
 const Icon = styled.div`
@@ -47,7 +41,8 @@ const Item = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Name = styled.span`
+const Text = styled.span`
+  font-size: 1rem;
 `
 
 export {
@@ -56,9 +51,8 @@ export {
   Days,
   Row,
   Day,
-  Date,
   Icon,
   Img,
   Item,
-  Name
+  Text
 }

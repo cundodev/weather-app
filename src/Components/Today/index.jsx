@@ -1,10 +1,8 @@
 
 import TodayDescription from '../TodayDescription'
 import { TodayInfo, Img, Icon, Content, Temperature, State, Wrapper } from './style'
-import { IMG_128X128, findIcon } from '../../assets/script'
 
 export default function Today ({ today }) {
-  const { icon } = findIcon(today.codeIcon)
   return (
     <TodayInfo>
       <Wrapper>
@@ -13,7 +11,7 @@ export default function Today ({ today }) {
         </Temperature>
         <Content>
           <Icon>
-            <Img src={`${IMG_128X128}${icon}.png`} />
+            <Img src={today.img} />
           </Icon>
           <State>
             {today.conditionText}

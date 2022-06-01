@@ -12,26 +12,28 @@ export default function TodayDescription ({ infoToday }) {
           <Title>Min</Title>
         </Stat>
         <Stat>
-          {Math.round(visibility)}km
-          <Title>Visibilidad</Title>
-        </Stat>
-        <Stat>
-          {Math.round(precipitation)}mm
-          <Title>Precipitacion</Title>
+          {Math.round(max)}°
+          <Title>Max</Title>
         </Stat>
       </InfoItem>
       <InfoItem>
         <Stat>
-          {Math.round(max)}°
-          <Title>Max</Title>
+          {Math.round(visibility)}km
+          <Title>Visibility</Title>
         </Stat>
         <Stat>
+          {Math.round(precipitation)}mm
+          <Title>Precipitation</Title>
+        </Stat>
+      </InfoItem>
+      <InfoItem>
+        <Stat>
           {Math.round(windSpeed)}<span>km/h</span>
-          <Title>Viento</Title>
+          <Title>Wind</Title>
         </Stat>
         <Stat>
           {Math.round(humidity)} %
-          <Title>Humedad</Title>
+          <Title>Humidity</Title>
         </Stat>
       </InfoItem>
     </Info>

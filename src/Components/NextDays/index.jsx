@@ -1,5 +1,5 @@
-import moment from 'moment'
-import { Next5Days, Title, Days, Row, Day, Date, Icon, Img, Item, Name } from './styles'
+// import moment from 'moment'
+import { Next5Days, Title, Days, Row, Day, Icon, Img, Text, Item } from './styles'
 export default function NextDays ({ nextDays }) {
   return (
     <Next5Days>
@@ -8,22 +8,33 @@ export default function NextDays ({ nextDays }) {
         {
         nextDays.map(day => {
           return (
-            <Row key={day.id}>
+            <Row key={day.date}>
               <Day>
-                {moment(day.applicable_date).format('dddd')}
-                <Date>{moment(day.applicable_date).format('DD/MM')}</Date>
+                {day.date}
               </Day>
+
               <Icon>
-                <Img src='#' />
+                <Img src={day.img} />
               </Icon>
               <Item>
-                {Math.round(day.min_temp)}°
-                <Name>Low</Name>
+                {Math.round(day.min)}°
+                <Text>Min</Text>
               </Item>
               <Item>
-                {Math.round(day.max_temp)}°
-                <Name>High</Name>
+                {Math.round(day.max)}°
+                <Text>Max</Text>
               </Item>
+            </Row>
+          )
+        })
+      }
+      </Days>
+    </Next5Days>
+  )
+};
+
+/**
+ *
               <Item>
                 {Math.round(day.humidity)} %
                 <Name>Humidity</Name>
@@ -32,12 +43,4 @@ export default function NextDays ({ nextDays }) {
                 <div>{Math.round(day.wind_speed)} <span>mph</span></div>
                 <Name>Wind</Name>
               </Item>
-            </Row>
-          )
-        })
-      }
-
-      </Days>
-    </Next5Days>
-  )
-};
+ */
