@@ -1,19 +1,19 @@
 import styled from 'styled-components'
 
 const LocationList = styled.ul`
-  display: inline-block;
   position: absolute;
+  display: block;
+  margin: 3rem 0 0 0;
   width: 100%;
-  z-index: 1;
   padding: 1rem;
   max-height: 500px;
   line-height: 2rem;
   overflow-y: scroll;
-  background: rgba(44,121,193,0.25);
-  backdrop-filter: blur( 3px );
-  -webkit-backdrop-filter: blur( 3px );
+  background: rgba(98,184,246,.5);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 999;
 
   &::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -47,7 +47,6 @@ const LocationListItem = styled.li`
   display: flex;
   justify-content: space-between;
   border: 1px solid transparent;
-  padding-left: 1rem;
   &:hover {
     color: #000;
     font-weight: 600;

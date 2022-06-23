@@ -1,32 +1,33 @@
-import { useContext, useState } from 'react'
-import LocationContext from '../../Context/locationContext'
-import { Imput, FormSearch, Button, Icon } from './style'
+import { useState } from 'react'
+import Locations from '../Locations'
+
+import useLocations from '../../Hooks/useLocations'
+import { Imput, FormSearch, Button, Icon, Results } from './style'
 
 export default function SearchForm () {
-  const { setKeyword } = useContext(LocationContext)
-  const [location, setLocation] = useState('')
+  const [value, setValue] = useState(null)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setKeyword(location)
-  }
-
+  const { locations } = useLocations({ keyword: value })
   const handleChange = (e) => {
-    setLocation(e.target.value)
+    setValue(e.target.value)
   }
 
   return (
-    <FormSearch onSubmit={handleSubmit}>
-      <Imput
-        type='text'
-        className='Search'
-        onChange={handleChange}
-        value={location || ''}
-        placeholder='Search location'
-      />
-      <Button>
-        <Icon src='/src/assets/search-icon.svg' alt='buscar' />
-      </Button>
-    </FormSearch>
+    <Results>
+      <FormSearch>
+        <Imput
+          type='text'
+          className='Search'
+          onChange={handleChange}
+          value={value || ''}
+          placeholder='Search location'
+        />
+        <Button>
+          <Icon src='../img/search-icon.svg' alt='buscar' />
+        </Button>
+
+      </FormSearch>
+      {locations && <Locations locations={locations} />}
+    </Results>
   )
 };

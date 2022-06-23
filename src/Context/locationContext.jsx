@@ -3,11 +3,11 @@ import { useState, createContext } from 'react'
 const Context = createContext({})
 
 export function LocationContextProvider ({ children }) {
-  const [locationID, setLocationID] = useState(44418)
+  const [locationURL, setLocationURL] = useState(null)
   const [keyword, setKeyword] = useState('')
 
   return (
-    <Context.Provider value={{ keyword, setKeyword, locationID, setLocationID }}>
+    <Context.Provider value={{ keyword, setKeyword, locationURL, setLocationURL }}>
       {children}
     </Context.Provider>
   )

@@ -1,6 +1,5 @@
 .App {
-  background: rgb(98,184,246);
-  background: linear-gradient(180deg, rgba(98,184,246,1) 0%, rgba(44,121,193,1) 75%);
+  background-color: #333;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: #ffffff;
@@ -14,3 +13,7 @@ main{
   padding: 1em;
 }
 
+/**
+  background: rgb(98,184,246);
+  background: linear-gradient(180deg, rgba(98,184,246,1) 0%, rgba(44,121,193,1) 75%);
+**/

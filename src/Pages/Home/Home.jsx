@@ -8,8 +8,9 @@ import { } from './style.js'
 import NextDays from '../../Components/NextDays'
 
 export default function Home () {
-  const { keyword } = useContext(LocationContext)
-  const { forecast } = useForecast({ keyword })
+  const { locationURL } = useContext(LocationContext)
+  console.log(locationURL)
+  const { forecast } = useForecast({ location: locationURL })
   // const { location } = useForecast({ locationID })
   /*
   if (location) {
@@ -17,8 +18,6 @@ export default function Home () {
     const nextDays = location.consolidated_weather.slice(1, max)
   }
 */
-  console.log(forecast)
-  console.log(forecast?.nextDays)
   return (
     <main>
       <NavBar />
@@ -26,7 +25,7 @@ export default function Home () {
         {
        forecast && (
          <>
-           <Location location={forecast.location} />
+           <Location location={forecast.locationInfo} />
            <Today today={forecast.today} />
            {
               forecast.nextDays && (

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Next5Days = styled.section`
   width: 100%;
@@ -22,6 +22,7 @@ const Row = styled.div`
   background-color: rgba(255,255,255,0.1);
   border-radius: 10px;
   padding: 1rem 2rem;
+  cursor: pointer;
 `
 const Day = styled.span`
   width: 4em;
@@ -37,14 +38,13 @@ const Img = styled.img`
 `
 const Item = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
-const Text = styled.span`
-  font-size: 1rem;
+const Text = styled.strong`
+  font-size: '1.5rem';
+  color: ${(props) => props.color};
 `
-
 export {
   Next5Days,
   Title,

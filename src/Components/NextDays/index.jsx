@@ -1,6 +1,12 @@
-// import moment from 'moment'
+import { useState } from 'react'
 import { Next5Days, Title, Days, Row, Day, Icon, Img, Text, Item } from './styles'
 export default function NextDays ({ nextDays }) {
+  const [show, setShow] = useState(false)
+
+  const handleClick = (e) => {
+    setShow(!show)
+    e.currentTarget.setAttribute('show', show)
+  }
   return (
     <Next5Days>
       <Title>Next Days</Title>
@@ -8,21 +14,18 @@ export default function NextDays ({ nextDays }) {
         {
         nextDays.map(day => {
           return (
-            <Row key={day.date}>
+            <Row key={day.date} onClick={handleClick}>
               <Day>
                 {day.date}
               </Day>
-
               <Icon>
                 <Img src={day.img} />
               </Icon>
               <Item>
-                {Math.round(day.min)}°
-                <Text>Min</Text>
+                <Text color='#9bbcff'>{Math.round(day.min)}°</Text>
               </Item>
               <Item>
-                {Math.round(day.max)}°
-                <Text>Max</Text>
+                <Text color='#ff3300'>{Math.round(day.max)}°</Text>
               </Item>
             </Row>
           )

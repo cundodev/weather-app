@@ -1,31 +1,38 @@
 import styled from 'styled-components'
 
-const FormSearch = styled.form`
+const Results = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`
+const FormSearch = styled.div`
   width: 100%;
   padding-inline: .75rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  border: 1px solid #666;
+  gap:5px;
   background: rgba( 255, 255, 255, 0.25 );
   backdrop-filter: blur( 3px );
   -webkit-backdrop-filter: blur( 3px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 2px solid transparent;
   &:focus-within{
-    outline: #fff;
-    border-color: #fff;
+    border: 2px solid rgb(98,184,246);
   }
 `
 
 const Imput = styled.input`
+  color: #fff;
   width: 100%;
-  height: 100%;
   padding: .75rem;
   background: transparent;
   border: none;
   outline: none;
+  ::placeholder{
+    color: #fff;
+    opacity: .7;
+  }
 `
 
 const Button = styled.div`
@@ -43,5 +50,6 @@ export {
   Imput,
   FormSearch,
   Button,
-  Icon
+  Icon,
+  Results
 }

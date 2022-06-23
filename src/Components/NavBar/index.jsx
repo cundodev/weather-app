@@ -1,6 +1,6 @@
 
 import SearchForm from '../../Components/SearchForm'
-import { Header, Results, Wrapper, Logo } from './style.js'
+import { Header, Wrapper, Logo } from './style.js'
 
 export default function NavBar () {
   return (
@@ -8,9 +8,7 @@ export default function NavBar () {
       <Wrapper>
         <Logo>Weather App</Logo>
       </Wrapper>
-      <Results>
-        <SearchForm />
-      </Results>
+      <SearchForm />
     </Header>
   )
 };

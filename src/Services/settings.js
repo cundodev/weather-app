@@ -1,4 +1,4 @@
-export const API_URL = 'https://weatherapi-com.p.rapidapi.com/forecast.json'
+export const API_URL = 'https://weatherapi-com.p.rapidapi.com/'
 
 export const FETCH_OPTIONS = {
   method: 'GET',
