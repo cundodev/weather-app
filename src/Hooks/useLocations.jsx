@@ -7,12 +7,12 @@ export default function useLocations ({ keyword }) {
   useEffect(() => {
     if (!keyword) return
     const timeout = setTimeout(async () => {
-      console.log(keyword)
       const { data } = await getLocations({ keyword })
+      if (data.length === 0) return
       setLocations(data)
     }, 777)
 
     return () => clearTimeout(timeout)
   }, [keyword])
-  return { locations }
+  return { locations, setLocations }
 }

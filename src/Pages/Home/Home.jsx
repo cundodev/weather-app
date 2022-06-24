@@ -4,38 +4,28 @@ import useForecast from '../../Hooks/useForecast'
 import NavBar from '../../Components/NavBar'
 import Today from '../../Components/Today'
 import Location from '../../Components/Location'
-import { } from './style.js'
 import NextDays from '../../Components/NextDays'
+import ForHour from '../../Components/ForHour'
+import { } from './style.js'
 
 export default function Home () {
   const { locationURL } = useContext(LocationContext)
-  console.log(locationURL)
   const { forecast } = useForecast({ location: locationURL })
-  // const { location } = useForecast({ locationID })
-  /*
-  if (location) {
-    const max = location.consolidated_weather.length
-    const nextDays = location.consolidated_weather.slice(1, max)
-  }
-*/
+
   return (
     <main>
       <NavBar />
       <>
         {
-       forecast && (
-         <>
-           <Location location={forecast.locationInfo} />
-           <Today today={forecast.today} />
-           {
-              forecast.nextDays && (
-                <NextDays nextDays={forecast?.nextDays} />
-              )
-            }
-         </>
-       )
-      }
-
+          forecast && (
+            <>
+              <Location location={forecast?.locationInfo} />
+              <Today today={forecast?.today} />
+              <ForHour forHour={forecast?.nextDays[0].forecastForHuor} />
+              <NextDays nextDays={forecast?.nextDays} />
+            </>
+          )
+        }
       </>
     </main>
   )

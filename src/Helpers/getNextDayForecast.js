@@ -5,7 +5,7 @@ const getNextDayForecast = ({ data }) => {
   const { forecast } = data
   const { forecastday } = forecast
   forecastday.forEach(days => {
-    const { day, date } = days
+    const { day, date, hour } = days
     const { maxtemp_c, mintemp_c, condition } = day
     const { code, text } = condition
     const { icon } = findIcon(code)
@@ -15,7 +15,8 @@ const getNextDayForecast = ({ data }) => {
       max: maxtemp_c,
       min: mintemp_c,
       img,
-      conditionText: text
+      conditionText: text,
+      forecastForHuor: hour
     })
   })
   return nextDay

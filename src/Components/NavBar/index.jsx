@@ -7,8 +7,9 @@ export default function NavBar () {
     <Header>
       <Wrapper>
         <Logo>Weather App</Logo>
+        <SearchForm />
       </Wrapper>
-      <SearchForm />
+
     </Header>
   )
 };

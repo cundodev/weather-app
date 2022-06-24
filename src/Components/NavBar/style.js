@@ -6,11 +6,8 @@ const Header = styled.header`
   gap: 1rem;
   margin: 0 0 1.5rem 0;
 `
-const Results = styled.div`
-  position: relative;
-`
 const Wrapper = styled.div`
-
+  display: flex;
 `
 const Logo = styled.span`
   font-size: 2rem;
@@ -18,7 +15,6 @@ const Logo = styled.span`
 `
 export {
   Header,
-  Results,
   Wrapper,
   Logo
 }

@@ -4,6 +4,7 @@ const Results = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
 `
 const FormSearch = styled.div`
   width: 100%;

@@ -9,9 +9,8 @@ const LocationList = styled.ul`
   max-height: 500px;
   line-height: 2rem;
   overflow-y: scroll;
-  background: rgba(98,184,246,.5);
-  backdrop-filter: blur( 10px );
-  -webkit-backdrop-filter: blur( 10px );
+  background: #555;
+  border: 2px solid rgb(98,184,246);
   border-radius: 10px;
   z-index: 999;
 
@@ -48,13 +47,23 @@ const LocationListItem = styled.li`
   justify-content: space-between;
   border: 1px solid transparent;
   &:hover {
-    color: #000;
+    color: rgb(98,184,246);
+  }
+`
+const Text = styled.span`
+  &.name{
     font-weight: 600;
   }
-  
+  &.region{
+    opacity: .8;
+  }
+  &.country{
+    opacity: .6;
+  }
 `
 
 export {
   LocationList,
-  LocationListItem
+  LocationListItem,
+  Text
 }

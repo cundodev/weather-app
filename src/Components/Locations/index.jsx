@@ -1,20 +1,24 @@
-import { useContext } from 'react'
-import LocationContext from '../../Context/locationContext'
-import { LocationList, LocationListItem } from './style'
-export default function Locations ({ locations }) {
-  const { setLocationURL } = useContext(LocationContext)
+import { LocationList, LocationListItem, Text } from './style'
 
-  const handleOnClick = (url) => {
-    setLocationURL(url)
-  }
-
+export default function Locations ({ locations, handleOnClick }) {
   return (
     <LocationList>
       {
-        locations.map(({ name, id, url }) => {
+        locations.map(({ name, region, country, id, url }) => {
           return (
             <LocationListItem key={id} onClick={() => handleOnClick(url)}>
-              <a>{name}</a>
+              <a>
+                <Text className='name'>
+                  {name}
+                </Text>
+                <Text className='region'>
+                  {region && ', '}{region}
+                </Text>
+                <Text className='country'>
+                  , {country}
+                </Text>
+
+              </a>
             </LocationListItem>
           )
         })

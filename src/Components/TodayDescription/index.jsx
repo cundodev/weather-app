@@ -2,7 +2,7 @@
 import { Info, InfoItem, Title, Stat } from './style'
 
 export default function TodayDescription ({ infoToday }) {
-  const { windSpeed, visibility, precipitation, humidity, max, min, forecast } = infoToday
+  const { windSpeed, visibility, precipitation, humidity, max, min } = infoToday
 
   return (
     <Info>
