@@ -4,36 +4,47 @@ const Info = styled.div`
   width: 100%;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   gap: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.5);
+  border-top: 1px solid rgb(98,184,246);;
   @media (min-width: 768px) {
     border-top: none;
-    border-left:1px solid rgba(255,255,255,0.5);
-    flex-direction: row;
-    justify-content: space-around;
+    border-left: 1px solid rgb(98,184,246);;
   }
 `
 const Title = styled.span`
-  display: block;
   opacity: .7;
-  font-size: .7em;
+  font-size: 1.125rem;
 `
 const Stat = styled.div`
-  font-size: 1em;
-  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  & span {
+    font-weight: 600;
+    color: ${(props) => props.color};
+  }
+    
 `
 const InfoItem = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  text-align: center;
-  @media (min-width: 768px) {
-    flex-direction: column;
-  }
+  align-items: flex-start;
+  gap: 1rem;
+
 `
+const Icon = styled.img`
+  width: 24px;
+  height: 24px;
+`
+
 export {
   Info,
   InfoItem,
   Title,
-  Stat
+  Stat,
+  Icon
 }

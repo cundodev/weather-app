@@ -6,17 +6,17 @@ export default function Today ({ today }) {
   return (
     <TodayInfo>
       <Wrapper>
-        <Temperature>
-          {Math.round(today.temperature)}°
-        </Temperature>
         <Content>
+          <Temperature>
+            {Math.round(today.temperature)}°
+          </Temperature>
           <Icon>
             <Img src={today.img} />
           </Icon>
-          <State>
-            {today.conditionText}
-          </State>
         </Content>
+        <State>
+          {today.conditionText}
+        </State>
       </Wrapper>
       <TodayDescription infoToday={today} />
     </TodayInfo>

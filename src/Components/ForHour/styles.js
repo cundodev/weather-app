@@ -12,9 +12,8 @@ const Hours = styled.ul`
     width: 5px;
     background: rgba(255,255,255,0.1);
     border-radius: 10px;
-    border: 1px solid rgb(98,184,246);
   }
-  ::-webkit-scrollbar-thumb:horizontal{
+  ::-webkit-scrollbar-thumb:horizontal {
     background: rgb(98,184,246);
     border-radius: 10px;
   }

@@ -8,6 +8,12 @@ const Header = styled.header`
 `
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
 `
 const Logo = styled.span`
   font-size: 2rem;

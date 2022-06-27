@@ -1,39 +1,43 @@
 
-import { Info, InfoItem, Title, Stat } from './style'
+import { Info, InfoItem, Title, Stat, Icon } from './style'
 
 export default function TodayDescription ({ infoToday }) {
-  const { windSpeed, visibility, precipitation, humidity, max, min } = infoToday
+  const { windSpeed, visibility, changeOfRain, humidity, max, min } = infoToday
 
   return (
     <Info>
       <InfoItem>
-        <Stat>
-          {Math.round(min)}°
-          <Title>Min</Title>
+        <Stat title='Min Temperature' color='#9bbcff'>
+          <span>{Math.round(min)}°</span>
         </Stat>
-        <Stat>
-          {Math.round(max)}°
-          <Title>Max</Title>
+        <Stat title='Max Temperature' color='#ff3300'>
+          <span>{Math.round(max)}°</span>
         </Stat>
       </InfoItem>
       <InfoItem>
-        <Stat>
-          {Math.round(visibility)}km
-          <Title>Visibility</Title>
+        <Stat title='Visibility'>
+          <Icon src='../img/visibility.svg' />
+          <Title>
+            {Math.round(visibility)} km
+          </Title>
         </Stat>
-        <Stat>
-          {Math.round(precipitation)}mm
-          <Title>Precipitation</Title>
+        <Stat title='Change of Rain'>
+          <Icon src='../img/rain.svg' />
+          <Title>
+            {Math.round(changeOfRain)} %
+          </Title>
         </Stat>
       </InfoItem>
       <InfoItem>
-        <Stat>
-          {Math.round(windSpeed)}<span>km/h</span>
-          <Title>Wind</Title>
+        <Stat title='Wind'>
+          <Icon src='../img/air.svg' />
+          <Title>
+            {Math.round(windSpeed)}km/h
+          </Title>
         </Stat>
-        <Stat>
-          {Math.round(humidity)} %
-          <Title>Humidity</Title>
+        <Stat title='Humidity'>
+          <Icon src='../img/humidity.svg' />
+          <Title> {Math.round(humidity)} %</Title>
         </Stat>
       </InfoItem>
     </Info>

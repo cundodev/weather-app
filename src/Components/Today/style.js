@@ -19,7 +19,10 @@ const Icon = styled.div`
   width: auto;
 `
 const Content = styled.div`
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 `
 const Temperature = styled.span`
   display: block;
@@ -32,9 +35,9 @@ const State = styled.span`
 `
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 1rem;
   padding: 1rem;
 `
 
