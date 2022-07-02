@@ -2,7 +2,7 @@
 import { Info, InfoItem, Title, Stat, Icon } from './style'
 
 export default function TodayDescription ({ infoToday }) {
-  const { windSpeed, visibility, changeOfRain, humidity, max, min } = infoToday
+  const { windSpeed, visibility, changeOfRain, humidity, max, min, sunrise, sunset } = infoToday
 
   return (
     <Info>
@@ -38,6 +38,18 @@ export default function TodayDescription ({ infoToday }) {
         <Stat title='Humidity'>
           <Icon src='../img/humidity.svg' />
           <Title> {Math.round(humidity)} %</Title>
+        </Stat>
+      </InfoItem>
+      <InfoItem>
+        <Stat title='sunrise'>
+          <Icon src='../img/sunrise.svg' />
+          <Title>
+            {sunrise}
+          </Title>
+        </Stat>
+        <Stat title='sunset'>
+          <Icon src='../img/sunset.svg' />
+          <Title> {sunset} </Title>
         </Stat>
       </InfoItem>
     </Info>

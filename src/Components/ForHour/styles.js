@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-const Hours = styled.ul`
+const Conteiner = styled.div`
   width: 100%;
   overflow-x: auto;
   display: flex;
   gap: 1rem;
-  padding: 0;
+  margin: 1rem 0;
   
   ::-webkit-scrollbar{
     height: 7px;
@@ -18,15 +18,32 @@ const Hours = styled.ul`
     border-radius: 10px;
   }
 `
-const Hour = styled.li`
+
+const Wrapper = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
+const Hours = styled.ul`
   display: flex;
+  gap: 1rem;
+  padding: 0;
+`
+const Hour = styled.li`
+  display: ${(props) => props.cHour ? 'none' : 'flex'};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 1rem;
+  border-radius: 80px;
+  padding-block: 1.5rem;
   margin-bottom: 1rem;
+  border: 2px solid rgb(98,184,246); 
+
+  &.nextDay{
+    border: 2px solid transparent; 
+    opacity: 0.5;
+  }
 `
 
 const Time = styled.span`
@@ -44,10 +61,12 @@ const Img = styled.img`
 const Temp = styled.span`
 `
 export {
+  Conteiner,
   Hour,
   Time,
   Img,
   Temp,
   Icon,
-  Hours
+  Hours,
+  Wrapper
 }

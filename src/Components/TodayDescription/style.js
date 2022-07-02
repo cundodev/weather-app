@@ -34,7 +34,6 @@ const InfoItem = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   gap: 1rem;
-
 `
 const Icon = styled.img`
   width: 24px;

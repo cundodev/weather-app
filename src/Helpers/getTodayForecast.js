@@ -6,6 +6,7 @@ const getTodayForecast = ({ data }) => {
   const { text, code } = condition
   const { forecastday } = forecast
   const { maxtemp_c, mintemp_c, daily_chance_of_rain } = forecastday[0].day
+  const { sunrise, sunset } = forecastday[0].astro
   const { icon } = findIcon(code)
   const img = `${IMG_128X128}${icon}.png`
 
@@ -22,7 +23,9 @@ const getTodayForecast = ({ data }) => {
     forecast: forecastday,
     max: maxtemp_c,
     min: mintemp_c,
-    changeOfRain: daily_chance_of_rain
+    changeOfRain: daily_chance_of_rain,
+    sunrise,
+    sunset
   }
 }
 export default getTodayForecast

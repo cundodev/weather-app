@@ -23,7 +23,7 @@ export default function Home () {
             <>
               <Location location={forecast?.locationInfo} />
               <Today today={forecast?.today} />
-              <ForHour forHour={forecast?.nextDays[0].forecastForHuor} />
+              <ForHour forHour={forecast?.nextDays} />
               <NextDays nextDays={forecast?.nextDays.slice(1)} />
             </>
           )

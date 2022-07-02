@@ -1,9 +1,8 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 const getLocation = ({ data }) => {
   const { location } = data
   const { name, region, localtime } = location
-  moment().locale('es')
-  const date = moment(localtime).format('dddd D MMMM')
+  const date = dayjs(localtime).format('dddd D MMMM')
   return {
     locationName: name,
     region,
