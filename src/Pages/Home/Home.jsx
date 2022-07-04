@@ -13,7 +13,6 @@ export default function Home () {
   const { position } = usePosition()
   const { locationURL } = useContext(LocationContext)
   const { forecast } = useForecast({ location: locationURL || position })
-
   return (
     <main>
       <NavBar />

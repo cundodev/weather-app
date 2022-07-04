@@ -1,9 +1,9 @@
 import { IMG_128X128, findIcon } from '../Constants'
 import dayjs from 'dayjs'
 const getNextDayForecast = ({ data }) => {
-  const { forecast, location } = data
+  const { forecast } = data
   const { forecastday } = forecast
-  const nextDay = [{ localtime: location.localtime_epoch }]
+  const nextDay = []
   forecastday.forEach(days => {
     const { day, date, hour } = days
     const { maxtemp_c, mintemp_c, condition } = day

@@ -4,8 +4,6 @@ const Info = styled.div`
   width: 100%;
   padding: 1rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   gap: 1rem;
   border-top: 1px solid rgb(98,184,246);;
   @media (min-width: 768px) {
@@ -15,7 +13,8 @@ const Info = styled.div`
 `
 const Title = styled.span`
   opacity: .7;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  white-space: nowrap;
 `
 const Stat = styled.div`
   display: flex;

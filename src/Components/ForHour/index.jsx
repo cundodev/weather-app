@@ -1,11 +1,10 @@
 import { Conteiner, Hours, Hour, Time, Img, Temp, Icon, Wrapper } from './styles'
 
 export default function ForHour ({ forHour }) {
-  const utcTime = new Date()
-  const currentTime = new Date(utcTime.setUTCSeconds(forHour[0].localtime))
+  const currentTime = new Date()
   const currentHour = currentTime.getHours()
-  const todayHours = forHour[1].forecastForHuor
-  const nextDayHour = forHour[2].forecastForHuor
+  const todayHours = forHour[0].forecastForHuor
+  const nextDayHour = forHour[1].forecastForHuor
 
   return (
     <Conteiner>

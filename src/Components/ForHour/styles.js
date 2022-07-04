@@ -36,7 +36,7 @@ const Hour = styled.li`
   align-items: center;
   background-color: rgba(255,255,255,0.1);
   border-radius: 80px;
-  padding-block: 1.5rem;
+  padding: 1.5rem .5rem;
   margin-bottom: 1rem;
   border: 2px solid rgb(98,184,246); 
 
