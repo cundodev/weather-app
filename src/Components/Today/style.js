@@ -22,7 +22,6 @@ const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
 `
 const Temperature = styled.span`
   display: block;
