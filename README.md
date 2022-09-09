@@ -17,7 +17,7 @@ Accede al la web [Weather-App](https://any-weather-facindito.vercel.app/)
 
 ## Capturas
 
-[IMG](./public/img/weather-app.png)
+<img src="./public/img/weather-app.png"/>
 
 ## Tecnologías
 
