@@ -2,7 +2,7 @@
 
 ## Demo
 
-Accede al la web [Weather-App](https://any-weather-facindito.vercel.app/)
+Accede a la web [Weather-App](https://any-weather-facindito.vercel.app/)
 
 ## Lista de contenido
 
@@ -30,14 +30,14 @@ Accede al la web [Weather-App](https://any-weather-facindito.vercel.app/)
 
 ## Instalacion y Comandos
 
--Descarga o clona el repositorio
+- Descarga o clona el repositorio
 
--Requisito: [API KEY](https://rapidapi.com/weatherapi/api/weatherapi-com/)
+- Requisito: [API KEY](https://rapidapi.com/weatherapi/api/weatherapi-com/)
 
--Instalacion:
+- Instalacion:
 
 `npm install`
 
--Visita:
+- Visita:
 
 `https://localhost:3000/`
