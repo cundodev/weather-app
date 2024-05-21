@@ -5,7 +5,8 @@ export const FETCH_OPTIONS = {
   headers: {
     'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
     'X-RapidAPI-Key':
-      import.meta.env.VITE_VERCEL_ENV === 'production'
+      import.meta.env.VITE_VERCEL_ENV === 'production' ||
+      import.meta.env.VITE_VERCEL_ENV === 'preview'
         ? import.meta.env.VITE_VERCEL_API_KEY
         : import.meta.env.VITE_APP_API_KEY,
   },

@@ -2,7 +2,7 @@
 
 ## Demo
 
-Accede a la web [Weather-App](https://any-weather-facindito.vercel.app/)
+Accede a la web [Weather-App](https://any-weather.vercel.app/)
 
 ## Lista de contenido
 
